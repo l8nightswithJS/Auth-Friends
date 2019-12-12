@@ -1,14 +1,28 @@
 import React from 'react';
+import styled from 'styled-components'
 // import axiosWithAuth from '../../axiosWithAuth';
 
-const Friends = ({ friend }) => {
+const Friends = (props) => {
+    console.log(props);
+
+    const Container = styled.div`
+        border: 1px solid;
+        margin: 0 auto;
+        width: 20%;
+    `
+
+    const Header = styled.h1`
+        color: red;
+    `
+
     return (
         <>
-            <div>
-                <h1>{friend.name}</h1>
-                <p>{friend.age}</p>
-                <p>{friend.email}</p>
-            </div>
+            <Container>
+                <Header>{props.friend.name}</Header>
+                <p>{props.friend.age}</p>
+                <p>{props.friend.email}</p>
+                {/* <button onClick={props.handleDelete}>x</button> */}
+            </Container>
         </>
     )
 }

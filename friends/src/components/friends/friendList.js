@@ -19,6 +19,18 @@ const FriendsList = () => {
         .catch(err => console.log(err))
     }, []);
 
+    // const handleDelete = e => {
+    //   e.preventDefault();
+    //   axiosWithAuth()
+    //   .delete('http://localhost:5000/api/friends/:id')
+    //   .then(res => {
+        
+    //     console.log([res.data])
+    //     setFriends(res.data)
+    //   }
+    //   ).catch(err => console.log(err)
+    //   )
+    // }
 
     
     

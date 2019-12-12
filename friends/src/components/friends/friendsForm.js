@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axiosWithAuth from '../../axiosWithAuth';
+import styled from 'styled-components';
 
 function FriendsForm (props) {
   const [addedFriend, setAddedFriend] = useState({
@@ -22,12 +23,30 @@ function FriendsForm (props) {
         
         props.setFriends(res.data);
         // console.log(addedFriend);
-        props.history.goBack();
+        
       })
       .catch(err => {console.log(err)})
     }; 
 
-   
+    const Label = styled.label`
+      color: green;
+    `
+
+    const Container = styled.div`
+      margin: 0 auto;
+      width: 20%;
+
+      
+    `
+
+    const Input = styled.input`
+      text-align: center;
+    `
+
+    const Form = styled.form`
+      display: flex;
+      flex-flow: row nowrap;
+    `
 
    
  
@@ -35,21 +54,32 @@ function FriendsForm (props) {
 
   return(
     <div>
-      <form onSubmit={handleSubmit}>
-          <label>Name</label>
-          <input 
+      <Form onSubmit={handleSubmit}>
+        <Container>
+          <Label>Name </Label>
+          <Input 
             placeholder="Name"
             type="text"
             name="name"
             value={addedFriend.name}
             onChange={handleChange}
           />
-          <label>Age</label>
-          <input placeholder="Age" type="num" name="age" value={addedFriend.age} onChange={handleChange}/>
-          <label>Email</label>
-          <input placeholder="Email" type="email" name="email" value={addedFriend.email} onChange={handleChange}/>
+        </Container>
+        <Container>  
+          <Label>Age </Label>
+          <Input 
+            placeholder="Age" 
+            type="num" 
+            name="age" 
+            value={addedFriend.age} 
+            onChange={handleChange}/>
+        </Container>
+        <Container>  
+          <Label>Email </Label>
+          <Input placeholder="Email" type="email" name="email" value={addedFriend.email} onChange={handleChange}/>
+        </Container>
         <button type="submit">Add</button>
-      </form>
+      </Form>
     </div>
   )
 }
