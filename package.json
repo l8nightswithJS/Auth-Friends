@@ -7,6 +7,7 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "node": "^13.3.0",
     "nodeman": "^1.1.2",
     "styled-components": "^4.4.1"
   },
@@ -15,7 +16,7 @@
   },
   "scripts": {
     "start": "nodemon server.js",
-    "build": "[my-framework] build --output public"
+    "build": "react-scripts build"
   },
   "author": "Lambda School",
   "license": "ISC"
