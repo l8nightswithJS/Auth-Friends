@@ -14,8 +14,8 @@
     "react-scripts": "3.3.0"
   },
   "scripts": {
-    "start": "react-script node app.js",
-    "build": "react-script [my-framework] build --output public",
+    "start": "node app.js",
+    "build": "[my-framework] build --output public",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
