@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axiosWithAuth from '../../axiosWithAuth';
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 function FriendsForm (props) {
   const [addedFriend, setAddedFriend] = useState({
@@ -28,25 +28,7 @@ function FriendsForm (props) {
       .catch(err => {console.log(err)})
     }; 
 
-    const Label = styled.label`
-      color: green;
-    `
-
-    const Container = styled.div`
-      margin: 0 auto;
-      width: 20%;
-
-      
-    `
-
-    const Input = styled.input`
-      text-align: center;
-    `
-
-    const Form = styled.form`
-      display: flex;
-      flex-flow: row nowrap;
-    `
+   
 
    
  
@@ -54,32 +36,33 @@ function FriendsForm (props) {
 
   return(
     <div>
-      <Form onSubmit={handleSubmit}>
-        <Container>
-          <Label>Name </Label>
-          <Input 
+      <form onSubmit={handleSubmit}>
+          <label>Name</label>
+          <input 
             placeholder="Name"
             type="text"
             name="name"
             value={addedFriend.name}
             onChange={handleChange}
-          />
-        </Container>
-        <Container>  
-          <Label>Age </Label>
-          <Input 
+          />    
+          <label>Age</label>
+          <input 
             placeholder="Age" 
             type="num" 
             name="age" 
             value={addedFriend.age} 
-            onChange={handleChange}/>
-        </Container>
-        <Container>  
-          <Label>Email </Label>
-          <Input placeholder="Email" type="email" name="email" value={addedFriend.email} onChange={handleChange}/>
-        </Container>
+            onChange={handleChange}
+          />    
+          <label>Email</label>
+          <input 
+            placeholder="Email" 
+            type="email" 
+            name="email" 
+            value={addedFriend.email} 
+            onChange={handleChange}
+          />
         <button type="submit">Add</button>
-      </Form>
+      </form>
     </div>
   )
 }
