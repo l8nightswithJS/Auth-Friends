@@ -29,7 +29,7 @@ const Login = ({history}) => {
     return (
     <>
       {isLoading ? ( 'Loading...' ) : (
-        <form onSubmit={handleSubmit}>
+        <form  className='form' onSubmit={handleSubmit}>
           <input
             type="text"
             name="username"
