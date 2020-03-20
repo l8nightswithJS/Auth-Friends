@@ -1,7 +1,9 @@
 const express = require('express');
+require('dotenv').config();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const port = 5000;
+
+const port = process.env.PORT;
 const app = express();
 const token =
   'esfeyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZhYi1jZWYzOTA0NUIhkufemQifQ';
@@ -130,5 +132,5 @@ function getNextId() {
 }
 
 app.listen(port, () => {
-  console.log(`server listening on port ${port}`);
+  console.log(`\n*** Server Running on http://localhost:${port} ***\n`);
 });
